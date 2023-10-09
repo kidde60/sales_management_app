@@ -65,6 +65,10 @@ class _ItemScreenState extends State<ItemScreen> {
               maxLength: 15,
               keyboardType: TextInputType.number,
             ),
+            ElevatedButton(onPressed: () {}, child: const Text('Submit')),
+            const SizedBox(
+              height: 10,
+            ),
             items.isEmpty
                 ? const Text('No item add, Please add Items')
                 : ListView.builder(
