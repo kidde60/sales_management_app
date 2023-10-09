@@ -12,6 +12,11 @@ class ItemScreen extends StatefulWidget {
 class _ItemScreenState extends State<ItemScreen> {
   List<Item> items = List.empty(growable: true);
 
+  TextEditingController nameController = TextEditingController();
+  TextEditingController quantityController = TextEditingController();
+  TextEditingController costController = TextEditingController();
+  TextEditingController priceController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,8 +30,9 @@ class _ItemScreenState extends State<ItemScreen> {
             const SizedBox(
               height: 10,
             ),
-            const TextField(
-              decoration: InputDecoration(
+            TextField(
+              controller: nameController,
+              decoration: const InputDecoration(
                   hintText: 'Item name',
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(10)))),
@@ -35,8 +41,9 @@ class _ItemScreenState extends State<ItemScreen> {
             const SizedBox(
               height: 10,
             ),
-            const TextField(
-              decoration: InputDecoration(
+            TextField(
+              controller: quantityController,
+              decoration: const InputDecoration(
                   hintText: 'Quantity',
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(10)))),
@@ -46,8 +53,9 @@ class _ItemScreenState extends State<ItemScreen> {
             const SizedBox(
               height: 10,
             ),
-            const TextField(
-              decoration: InputDecoration(
+            TextField(
+              controller: costController,
+              decoration: const InputDecoration(
                   hintText: 'Cost Of Item',
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(10)))),
@@ -57,8 +65,9 @@ class _ItemScreenState extends State<ItemScreen> {
             const SizedBox(
               height: 10,
             ),
-            const TextField(
-              decoration: InputDecoration(
+            TextField(
+              controller: priceController,
+              decoration: const InputDecoration(
                   hintText: 'Selling Price',
                   border: OutlineInputBorder(
                       borderRadius: BorderRadius.all(Radius.circular(10)))),
