@@ -1,8 +1,8 @@
 class Item {
   String name;
-  int quantity;
-  int cost;
-  int price;
+  int? quantity;
+  int? cost;
+  int? price;
 
-  Item(this.name, this.quantity, this.cost, this.price);
+  Item({required this.name, this.quantity, this.cost, this.price});
 }
