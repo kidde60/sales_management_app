@@ -121,6 +121,9 @@ class _ItemScreenState extends State<ItemScreen> {
   getRow(int index) {
     return Card(
       child: ListTile(
+        leading: CircleAvatar(
+          child: Text(items[index].name[0]),
+        ),
         title: Column(
           children: [
             Text(items[index].name),
