@@ -122,6 +122,8 @@ class _ItemScreenState extends State<ItemScreen> {
     return Card(
       child: ListTile(
         leading: CircleAvatar(
+          backgroundColor:
+              index % 2 == 0 ? Colors.deepPurpleAccent : Colors.purple,
           child: Text(items[index].name[0]),
         ),
         title: Column(
