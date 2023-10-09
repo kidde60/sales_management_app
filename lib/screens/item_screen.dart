@@ -134,6 +134,20 @@ class _ItemScreenState extends State<ItemScreen> {
             Text(items[index].price.toString()),
           ],
         ),
+        trailing: InkWell(
+          child: Row(
+            children: [
+              InkWell(onTap: () {}, child: const Icon(Icons.edit)),
+              InkWell(
+                  onTap: () {
+                    setState(() {
+                      items.removeAt(index);
+                    });
+                  },
+                  child: const Icon(Icons.delete))
+            ],
+          ),
+        ),
       ),
     );
   }
