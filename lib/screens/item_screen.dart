@@ -18,6 +18,11 @@ class _ItemScreenState extends State<ItemScreen> {
   TextEditingController priceController = TextEditingController();
 
   @override
+  void initState() {
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
@@ -74,14 +79,39 @@ class _ItemScreenState extends State<ItemScreen> {
               maxLength: 15,
               keyboardType: TextInputType.number,
             ),
-            ElevatedButton(onPressed: () {}, child: const Text('Submit')),
+            ElevatedButton(
+                onPressed: () {
+                  String name = nameController.text.trim();
+                  String quantity = quantityController.text.trim();
+                  String cost = costController.text.trim();
+                  String price = priceController.text.trim();
+
+                  if (name.isNotEmpty && quantity.isNotEmpty) {
+                    setState(() {
+                      items.add(Item(
+                          name: name,
+                          quantity: int.parse(quantity),
+                          cost: int.parse(cost),
+                          price: int.parse(price)));
+
+                      nameController.text = '';
+                      quantityController.text = '';
+                      costController.text = '';
+                      priceController.text = '';
+                    });
+                  }
+                },
+                child: const Text('Submit')),
             const SizedBox(
               height: 10,
             ),
             items.isEmpty
                 ? const Text('No item add, Please add Items')
-                : ListView.builder(
-                    itemBuilder: ((context, index) => getRow(index))),
+                : Expanded(
+                    child: ListView.builder(
+                        itemCount: items.length,
+                        itemBuilder: ((context, index) => getRow(index))),
+                  ),
           ],
         ),
       ),
@@ -89,14 +119,16 @@ class _ItemScreenState extends State<ItemScreen> {
   }
 
   getRow(int index) {
-    return ListTile(
-      title: Column(
-        children: [
-          Text(items[index].name),
-          Text(items[index].quantity.toString()),
-          Text(items[index].cost.toString()),
-          Text(items[index].price.toString()),
-        ],
+    return Card(
+      child: ListTile(
+        title: Column(
+          children: [
+            Text(items[index].name),
+            Text(items[index].quantity.toString()),
+            Text(items[index].cost.toString()),
+            Text(items[index].price.toString()),
+          ],
+        ),
       ),
     );
   }
