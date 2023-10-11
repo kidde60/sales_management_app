@@ -135,17 +135,21 @@ class _ItemScreenState extends State<ItemScreen> {
           ],
         ),
         trailing: InkWell(
-          child: Row(
-            children: [
-              InkWell(onTap: () {}, child: const Icon(Icons.edit)),
-              InkWell(
-                  onTap: () {
-                    setState(() {
-                      items.removeAt(index);
-                    });
-                  },
-                  child: const Icon(Icons.delete))
-            ],
+          child: SizedBox(
+            width: 70,
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                InkWell(onTap: () {}, child: const Icon(Icons.edit)),
+                InkWell(
+                    onTap: () {
+                      setState(() {
+                        items.removeAt(index);
+                      });
+                    },
+                    child: const Icon(Icons.delete))
+              ],
+            ),
           ),
         ),
       ),
