@@ -134,6 +134,7 @@ class _ItemScreenState extends State<ItemScreen> {
             Text(items[index].price.toString()),
           ],
         ),
+        
         trailing: InkWell(
           child: SizedBox(
             width: 70,
