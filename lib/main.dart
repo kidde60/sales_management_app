@@ -3,8 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:sales_management_app/screens/item_screen.dart';
 import 'package:sales_management_app/utils/them.dart';
 
-// import 'screens/welcome_screen.dart';
-
+// import 'screens/welcome_screen.dart';s
 void main() {
   runApp(const MyApp());
 }
