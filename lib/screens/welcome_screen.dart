@@ -16,13 +16,50 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         elevation: 0.0,
         centerTitle: true,
       ),
-      body: Column(
-        children: [
-          Image.asset('assets/images/sales.webp'),
-          const Text(
-              'Welcome  to online sales management system created by George  William Kidde'),
-        ],
+
+      body: Padding(
+        padding: const EdgeInsets.all(5.0),
+        child: Stack(
+          children: [
+            Positioned(
+              width: MediaQuery.sizeOf(context).width,
+              top: 10,
+              child: const Text(
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  'Welcome  to online sales management system created by George  William Kidde'),
+            ),
+            Positioned(
+              bottom: 80,
+              child: Image.asset(
+                width: MediaQuery.sizeOf(context).width,
+                'assets/images/sale.webp',
+              ),
+            ),
+          ],
+        ),
       ),
+      // body: Stack(
+      //   children: [
+      //     // const SizedBox(
+      //     //   height: 20,
+      //     // ),
+      //     const Positioned(
+      //       top: 80,
+      //       left: 20,
+      //       child: Text(
+      //           'Welcome  to online sales management system created by George  William Kidde'),
+      //     ),
+      //     SizedBox(
+      //       width: MediaQuery.sizeOf(context).width,
+      //       child: Image.asset(
+      //         'assets/images/sale.webp',
+      //       ),
+      //     ),
+      //   ],
+      // ),
     );
   }
 }
