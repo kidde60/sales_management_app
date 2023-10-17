@@ -17,11 +17,10 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         centerTitle: true,
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          Image.asset('assets/images/sales.webp'),
           const Text(
               'Welcome  to online sales management system created by George  William Kidde'),
-          Image.asset('assets/images/sales.webp')
         ],
       ),
     );
