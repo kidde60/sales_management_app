@@ -32,9 +32,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   'Welcome  to online sales management system created by George  William Kidde'),
             ),
             Positioned(
-              bottom: 80,
+              bottom: -300,
               child: Image.asset(
-                width: MediaQuery.sizeOf(context).width,
+                // width: MediaQuery.sizeOf(context).width,
                 'assets/images/sale.webp',
               ),
             ),
