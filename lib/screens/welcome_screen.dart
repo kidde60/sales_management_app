@@ -8,6 +8,8 @@ class WelcomeScreen extends StatefulWidget {
 }
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
+  bool animate = false;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,8 +33,9 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   ),
                   'Welcome  to online sales management system created by George  William Kidde'),
             ),
-            Positioned(
-              bottom: -300,
+            AnimatedPositioned(
+              bottom: animate ? 80 : -300,
+              duration: const Duration(milliseconds: 1500),
               child: Image.asset(
                 // width: MediaQuery.sizeOf(context).width,
                 'assets/images/sale.webp',
