@@ -10,7 +10,10 @@ class WelcomeScreen extends StatelessWidget {
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
-            Image.asset('assets/images/welcome1.avif'),
+            Image.asset('assets/images/wel.webp'),
+            const Text(
+                'Welcome to our online sales management system where all sales, profits and losses are managed in a single place.'),
+            OutlinedButton(onPressed: () {}, child: const Text('Login'))
           ],
         ),
       ),
