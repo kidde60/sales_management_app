@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sales_management_app/screens/signin_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -71,7 +72,9 @@ class LoginScreen extends StatelessWidget {
                       const SizedBox(
                         height: 10,
                       ),
-                      const Text('Login with Google'),
+                      OutlinedButton(
+                          onPressed: () {},
+                          child: const Text('Login with Google')),
                       const SizedBox(
                         height: 10,
                       ),
@@ -79,7 +82,13 @@ class LoginScreen extends StatelessWidget {
                         children: [
                           const Text('Don\'t have an account?'),
                           TextButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const SigninScreen()));
+                              },
                               child: Text('Signup'.toUpperCase()))
                         ],
                       )
