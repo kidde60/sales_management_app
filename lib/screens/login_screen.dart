@@ -52,7 +52,12 @@ class LoginScreen extends StatelessWidget {
                           child: const Text(
                             'Forgot Password?',
                           )),
-                    )
+                    ),
+                    SizedBox(
+                        width: double.infinity,
+                        child: ElevatedButton(
+                            onPressed: () {},
+                            child: Text('Login'.toUpperCase())))
                   ],
                 ),
               ))
