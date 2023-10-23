@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sales_management_app/screens/login_screen.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -9,7 +10,7 @@ class WelcomeScreen extends StatelessWidget {
 
     return Scaffold(
       body: Padding(
-        padding: const EdgeInsets.all(30.0),
+        padding: const EdgeInsets.all(10.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
@@ -25,7 +26,13 @@ class WelcomeScreen extends StatelessWidget {
               children: [
                 Expanded(
                     child: OutlinedButton(
-                        onPressed: () {}, child: Text('Login'.toUpperCase()))),
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const LoginScreen()));
+                        },
+                        child: Text('Login'.toUpperCase()))),
                 const SizedBox(
                   width: 10.0,
                 ),
