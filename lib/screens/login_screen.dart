@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sales_management_app/screens/home_page.dart';
 import 'package:sales_management_app/screens/signin_screen.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -62,8 +63,17 @@ class LoginScreen extends StatelessWidget {
                       SizedBox(
                           width: double.infinity,
                           child: ElevatedButton(
-                              onPressed: () {},
-                              child: Text('Login'.toUpperCase()))),
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => const HomePage()));
+                            },
+                            style: ElevatedButton.styleFrom(
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 20)),
+                            child: Text('Login'.toUpperCase()),
+                          )),
                       const SizedBox(
                         height: 10,
                       ),
@@ -71,9 +81,19 @@ class LoginScreen extends StatelessWidget {
                       const SizedBox(
                         height: 10,
                       ),
-                      OutlinedButton(
-                          onPressed: () {},
-                          child: const Text('Login with Google')),
+                      SizedBox(
+                        width: double.infinity,
+                        child: OutlinedButton.icon(
+                            icon: Image.asset(
+                              'assets/images/google.png',
+                              width: 20,
+                            ),
+                            onPressed: () {},
+                            style: ElevatedButton.styleFrom(
+                                padding:
+                                    const EdgeInsets.symmetric(vertical: 20)),
+                            label: const Text('Login with Google')),
+                      ),
                       const SizedBox(
                         height: 10,
                       ),
