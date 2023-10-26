@@ -86,7 +86,7 @@ class LoginScreen extends StatelessWidget {
                         child: OutlinedButton.icon(
                             icon: Image.asset(
                               'assets/images/google.png',
-                              width: 18,
+                              width: 20,
                             ),
                             onPressed: () {},
                             style: ElevatedButton.styleFrom(
