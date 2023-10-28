@@ -93,10 +93,10 @@ class _HomePageState extends State<HomePage> {
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(10),
                             color: Colors.black),
-                        child: const Center(
+                        child: Center(
                           child: Text(
                             list[index].title,
-                            style: TextStyle(
+                            style: const TextStyle(
                               color: Colors.white,
                             ),
                           ),
