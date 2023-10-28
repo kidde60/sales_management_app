@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sales_management_app/reusable/categories_model.dart';
 import 'package:sales_management_app/screens/item_screen.dart';
 
 class HomePage extends StatefulWidget {
@@ -11,6 +12,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    final list = Categories.list;
+
     return Scaffold(
       appBar: AppBar(
         leading: const Icon(Icons.menu, color: Colors.black),
@@ -75,161 +78,160 @@ class _HomePageState extends State<HomePage> {
             // Categories
             SizedBox(
               height: 45,
-              child: ListView(
+              child: ListView.builder(
+                itemCount: list.length,
                 shrinkWrap: true,
                 scrollDirection: Axis.horizontal,
-                children: [
-                  SizedBox(
-                    height: 50,
-                    width: 170,
-                    child: Row(
-                      children: [
-                        Container(
-                          height: 45,
-                          width: 45,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: Colors.black),
-                          child: const Center(
-                            child: Text(
-                              'PV',
-                              style: TextStyle(
-                                color: Colors.white,
-                              ),
+                itemBuilder: (context, index) => SizedBox(
+                  height: 50,
+                  width: 170,
+                  child: Row(
+                    children: [
+                      Container(
+                        height: 45,
+                        width: 45,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(10),
+                            color: Colors.black),
+                        child: const Center(
+                          child: Text(
+                            list[index].title,
+                            style: TextStyle(
+                              color: Colors.white,
                             ),
                           ),
                         ),
-                        const SizedBox(
-                          width: 5,
-                        ),
-                        const Flexible(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'PolyVynle',
-                                style: TextStyle(
-                                    color: Colors.white70,
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 16),
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                              Text(
-                                '50 pieces',
-                                style: TextStyle(
-                                    color: Colors.white70,
-                                    fontWeight: FontWeight.w200,
-                                    fontSize: 15),
-                                overflow: TextOverflow.ellipsis,
-                              )
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    height: 50,
-                    width: 170,
-                    child: Row(
-                      children: [
-                        Container(
-                          height: 45,
-                          width: 45,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: Colors.black),
-                          child: const Center(
-                            child: Text(
-                              'PV',
+                      ),
+                      const SizedBox(
+                        width: 5,
+                      ),
+                      const Flexible(
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'PolyVynle',
                               style: TextStyle(
-                                color: Colors.white,
-                              ),
+                                  color: Colors.white70,
+                                  fontWeight: FontWeight.w400,
+                                  fontSize: 16),
+                              overflow: TextOverflow.ellipsis,
                             ),
-                          ),
-                        ),
-                        const SizedBox(
-                          width: 5,
-                        ),
-                        const Flexible(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'PolyVynle',
-                                style: TextStyle(
-                                    color: Colors.white70,
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 16),
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                              Text(
-                                '50 pieces',
-                                style: TextStyle(
-                                    color: Colors.white70,
-                                    fontWeight: FontWeight.w200,
-                                    fontSize: 15),
-                                overflow: TextOverflow.ellipsis,
-                              )
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                  SizedBox(
-                    height: 50,
-                    width: 170,
-                    child: Row(
-                      children: [
-                        Container(
-                          height: 45,
-                          width: 45,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(10),
-                              color: Colors.black),
-                          child: const Center(
-                            child: Text(
-                              'PV',
+                            Text(
+                              '50 pieces',
                               style: TextStyle(
-                                color: Colors.white,
-                              ),
-                            ),
-                          ),
+                                  color: Colors.white70,
+                                  fontWeight: FontWeight.w200,
+                                  fontSize: 15),
+                              overflow: TextOverflow.ellipsis,
+                            )
+                          ],
                         ),
-                        const SizedBox(
-                          width: 5,
-                        ),
-                        const Flexible(
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                'PolyVynle',
-                                style: TextStyle(
-                                    color: Colors.white70,
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 16),
-                                overflow: TextOverflow.ellipsis,
-                              ),
-                              Text(
-                                '50 pieces',
-                                style: TextStyle(
-                                    color: Colors.white70,
-                                    fontWeight: FontWeight.w200,
-                                    fontSize: 15),
-                                overflow: TextOverflow.ellipsis,
-                              )
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
+                      )
+                    ],
                   ),
-                ],
+                ),
+                // SizedBox(
+                //   height: 50,
+                //   width: 170,
+                //   child: Row(
+                //     children: [
+                //       Container(
+                //         height: 45,
+                //         width: 45,
+                //         decoration: BoxDecoration(
+                //             borderRadius: BorderRadius.circular(10),
+                //             color: Colors.black),
+                //         child: const Center(
+                //           child: Text(
+                //             'PV',
+                //             style: TextStyle(
+                //               color: Colors.white,
+                //             ),
+                //           ),
+                //         ),
+                //       ),
+                //       const SizedBox(
+                //         width: 5,
+                //       ),
+                //       const Flexible(
+                //         child: Column(
+                //           mainAxisAlignment: MainAxisAlignment.center,
+                //           crossAxisAlignment: CrossAxisAlignment.start,
+                //           children: [
+                //             Text(
+                //               'PolyVynle',
+                //               style: TextStyle(
+                //                   color: Colors.white70,
+                //                   fontWeight: FontWeight.w400,
+                //                   fontSize: 16),
+                //               overflow: TextOverflow.ellipsis,
+                //             ),
+                //             Text(
+                //               '50 pieces',
+                //               style: TextStyle(
+                //                   color: Colors.white70,
+                //                   fontWeight: FontWeight.w200,
+                //                   fontSize: 15),
+                //               overflow: TextOverflow.ellipsis,
+                //             )
+                //           ],
+                //         ),
+                //       )
+                //     ],
+                //   ),
+                // ),
+                // SizedBox(
+                //   height: 50,
+                //   width: 170,
+                //   child: Row(
+                //     children: [
+                //       Container(
+                //         height: 45,
+                //         width: 45,
+                //         decoration: BoxDecoration(
+                //             borderRadius: BorderRadius.circular(10),
+                //             color: Colors.black),
+                //         child: const Center(
+                //           child: Text(
+                //             'PV',
+                //             style: TextStyle(
+                //               color: Colors.white,
+                //             ),
+                //           ),
+                //         ),
+                //       ),
+                //       const SizedBox(
+                //         width: 5,
+                //       ),
+                //       const Flexible(
+                //         child: Column(
+                //           mainAxisAlignment: MainAxisAlignment.center,
+                //           crossAxisAlignment: CrossAxisAlignment.start,
+                //           children: [
+                //             Text(
+                //               'PolyVynle',
+                //               style: TextStyle(
+                //                   color: Colors.white70,
+                //                   fontWeight: FontWeight.w400,
+                //                   fontSize: 16),
+                //               overflow: TextOverflow.ellipsis,
+                //             ),
+                //             Text(
+                //               '50 pieces',
+                //               style: TextStyle(
+                //                   color: Colors.white70,
+                //                   fontWeight: FontWeight.w200,
+                //                   fontSize: 15),
+                //               overflow: TextOverflow.ellipsis,
+                //             )
+                //           ],
+                //         ),
+                //       )
+                //     ],
+                //   ),
+                // ),
               ),
             )
           ],
