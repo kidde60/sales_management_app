@@ -105,22 +105,22 @@ class _HomePageState extends State<HomePage> {
                       const SizedBox(
                         width: 5,
                       ),
-                      const Flexible(
+                      Flexible(
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              'PolyVynle',
-                              style: TextStyle(
+                              list[index].subtitle,
+                              style: const TextStyle(
                                   color: Colors.white70,
                                   fontWeight: FontWeight.w400,
                                   fontSize: 16),
                               overflow: TextOverflow.ellipsis,
                             ),
                             Text(
-                              '50 pieces',
-                              style: TextStyle(
+                              list[index].description,
+                              style: const TextStyle(
                                   color: Colors.white70,
                                   fontWeight: FontWeight.w200,
                                   fontSize: 15),
