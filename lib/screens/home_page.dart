@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage> {
         title: Text('sales management app'.toUpperCase()),
         elevation: 0.0,
         centerTitle: true,
-        backgroundColor: Colors.blueAccent,
+        backgroundColor: const Color.fromARGB(255, 35, 92, 190),
         actions: [
           Container(
             margin: const EdgeInsets.only(right: 20, top: 7),
@@ -44,7 +44,7 @@ class _HomePageState extends State<HomePage> {
           child: Container(
         height: MediaQuery.sizeOf(context).height,
         decoration: const BoxDecoration(
-          color: Color.fromARGB(255, 31, 93, 199),
+          color: Color.fromARGB(255, 35, 105, 243),
         ),
         padding: const EdgeInsets.all(20),
         child: Column(
