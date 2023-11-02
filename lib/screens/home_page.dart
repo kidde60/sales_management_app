@@ -16,11 +16,11 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
       appBar: AppBar(
-        leading: const Icon(Icons.menu, color: Colors.black),
+        leading: const Icon(Icons.menu, color: Colors.white),
         title: Text('sales management app'.toUpperCase()),
         elevation: 0.0,
         centerTitle: true,
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.blueAccent,
         actions: [
           Container(
             margin: const EdgeInsets.only(right: 20, top: 7),
@@ -42,6 +42,8 @@ class _HomePageState extends State<HomePage> {
           child: const Icon(Icons.add)),
       body: SingleChildScrollView(
           child: Container(
+        decoration:
+            const BoxDecoration(color: Color.fromARGB(255, 31, 93, 199)),
         padding: const EdgeInsets.all(20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
