@@ -42,8 +42,10 @@ class _HomePageState extends State<HomePage> {
           child: const Icon(Icons.add)),
       body: SingleChildScrollView(
           child: Container(
-        decoration:
-            const BoxDecoration(color: Color.fromARGB(255, 31, 93, 199)),
+        height: MediaQuery.sizeOf(context).height,
+        decoration: const BoxDecoration(
+          color: Color.fromARGB(255, 31, 93, 199),
+        ),
         padding: const EdgeInsets.all(20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
